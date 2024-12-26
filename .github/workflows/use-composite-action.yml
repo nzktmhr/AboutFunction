@@ -20,4 +20,4 @@ jobs:
           repeat: 3
 
       - name: Use Output from Action
-        run: 'echo "Last message was: ${{ steps.call_print_message_action.outputs.last_message }}"'
+        run: 'echo "Last message was: ${{ env.last_message }}"'
