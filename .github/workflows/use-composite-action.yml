@@ -20,4 +20,5 @@ jobs:
           repeat: 3
 
       - name: Use Output from Action
-        run: echo "Last message was: ${{ steps.call_print_message_action.outputs.last_message }}" # outputs: Composite Actionの出力を利用
+        run: echo "Last message was: ${{ steps.call_print_message_action.outputs.last_message }}"
+        # outputs: Composite Actionの出力を利用
