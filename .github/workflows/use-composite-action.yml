@@ -1,0 +1,22 @@
+name: Use Composite Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-action:
+    runs-on:ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Call Print Message Action
+        uses: ./github/actions/print-message
+        with:
+          message: "Hello from composite Action"
+          repeat: 3
+
+      - name: Use Output from Action
+        run: echo "Last message was: ${{ steps.call-action.outputs.last_message }}"
