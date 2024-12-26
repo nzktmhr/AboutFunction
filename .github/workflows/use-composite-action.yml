@@ -13,12 +13,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Call Print Message Action
-        id: call_print_message_action        # ステップIDを設定
-        uses: ./github/actions/print-message # Composite Actionをローカルパスで指定
-        with:                                # Composite Actionのinputsに値を渡す
+        id: call_print_message_action
+        uses: ./github/actions/print-message # ローカルアクションのパスを指定
+        with:
           message: "Hello from composite Action"
           repeat: 3
 
       - name: Use Output from Action
         run: 'echo "Last message was: ${{ steps.call_print_message_action.outputs.last_message }}"'
-# outputs: Composite Actionの出力を利用
