@@ -14,7 +14,7 @@ jobs:
 
       - name: Call Print Message Action
         id: call_print_message_action
-        uses: ./github/actions/print-message # ローカルアクションのパスを指定
+        uses: ./.github/actions/print-message # ローカルアクションのパスを指定
         with:
           message: "Hello from composite Action"
           repeat: 3
