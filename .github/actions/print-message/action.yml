@@ -20,7 +20,7 @@ runs: # 使用する処理(Shellスクリプトなど)を定義
     - name: Repeat Message
       shell: bash
       run: |
-        for i in ${seq 1 ${{ inputs.repeat }}); do
+        for i in $(seq 1 ${{ inputs.repeat }}); do
           echo "${{ inputs.message }}"
         done
         echo "::set-output name=last_message::${{ inputs.message }}"
