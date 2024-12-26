@@ -23,4 +23,4 @@ runs: # 使用する処理(Shellスクリプトなど)を定義
         for i in $(seq 1 ${{ inputs.repeat }}); do
           echo "${{ inputs.message }}"
         done
-        echo "::set-output name=last_message::${{ inputs.message }}"
+        echo "last_message=${{ inputs.message }}" >> $GITHUB_ENV
