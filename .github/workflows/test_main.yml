@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-reusable:
-    uses: ./github/workflows/reusable.yml@main # 同じリポジトリ内のパス
+    uses: nzktmhr/AboutFunction/.github/workflows/reusable.yml@main # 同じリポジトリ内のパス
     with:
       greeting: "Hello from Main Workflow"
     secrets:
