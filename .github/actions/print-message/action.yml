@@ -18,6 +18,7 @@ runs: # 使用する処理(Shellスクリプトなど)を定義
   using: "composite"
   steps:
     - name: Repeat Message
+      shell: bash
       run: |
         for i in ${seq 1 ${{ inputs.repeat }}); do
           echo "${{ inputs.message }}"
