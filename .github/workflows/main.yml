@@ -1,0 +1,13 @@
+name: Main Workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-reusable:
+    uses: ./github/workflows/reusable.yml # 同じリポジトリ内のパス
+    with:
+      greeting: "Hello from Main Workflow"
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
